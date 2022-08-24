@@ -1,0 +1,92 @@
+.container {
+  grid-area: top;
+}
+
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr 50px;
+  grid-template-areas: 'img img' 'top top' 'divider divider' 'bottom bottom';
+
+}
+
+.img-container {
+  grid-area: img;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media screen and (max-height: 600px) {
+  img {
+    display: none;
+  }
+}
+
+img {
+  --scale: calc(30vh);
+  width: var(--scale);
+  height: var(--scale);
+}
+
+.top-container {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  grid-area: top;
+  min-height: 250px;
+  padding: 16px;
+  gap: 16px;
+}
+
+.top-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-area: bottom;
+  padding: 16px;
+  gap: 8px;
+}
+
+.divider-container {
+  justify-content: center;
+  align-items: center;
+  grid-area: divider;
+  padding: 16px;
+}
+
+.separator {
+  font-size: 12px;
+  color: grey;
+  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+

@@ -1,0 +1,74 @@
+.map_container {
+    margin: 16px;
+    border-radius: 10px;
+    height: 80%;
+    transition: height 300ms;
+    margin-bottom: 8px;
+}
+
+.court_pic {
+    height: 100%;
+    width: 40%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.scroll_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 10px;
+}
+
+.big_card {
+    height: 150px;
+    padding: 16px;
+}
+
+.small_text {
+    font-size: 12px;
+}
+
+.fullscreen {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    z-index: 1;
+    margin: 24px;
+    right: 0;
+    filter: invert(30%)
+}
+
+.court_icon {
+    width: 40%;
+    height: 40%;
+}
+
+.no_photo {
+    background-color: lightgray;
+    height: 100%;
+    width: 40%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.selected {
+    background-color: lightgray;
+}
+
+.link {
+    text-align: center;
+}
+
+.middle {
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
