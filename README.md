@@ -2,6 +2,8 @@
 
 A map-based app for finding and organizing volleyball games/courts, with user accounts.
 
+![Volley App screenshot](docs/screenshot.png)
+
 ## Features
 
 - 🗺️ **Interactive map** — Google Maps view (`@react-google-maps/api`) with volleyball-icon markers pulled from Firestore
