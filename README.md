@@ -37,4 +37,4 @@ Then open [http://localhost:3000](http://localhost:3000). `/` is the home feed (
 
 ## Status
 
-🚧 Functional prototype — core map, auth, and data flows are wired up, but there's no test coverage beyond the CRA defaults and no CI/deployment config checked in.
+🔧 Was broken — `npm install` failed with an ERESOLVE conflict because the unused, dead dependency `react-google-maps@9.4.5` (only peer-compatible with React 15/16) clashed with `react@18`; the app actually uses the modern `@react-google-maps/api` instead, so `react-google-maps` was removed from `package.json`. Also hit a known CRA5/ESLint 8.57 incompatibility (`eslint-plugin-jest` crashes with "Cannot read properties of undefined (reading 'Any')"); worked around with `DISABLE_ESLINT_PLUGIN=true npm run build`. With those in place, `npm install && DISABLE_ESLINT_PLUGIN=true npm run build` verified working as of 2026-09-03 (no Firebase credentials needed for a build). Functional prototype — core map, auth, and data flows are wired up, but there's no test coverage beyond the CRA defaults and no CI/deployment config checked in.
