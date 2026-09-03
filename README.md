@@ -20,7 +20,7 @@ cd volley-app
 npm install
 ```
 
-You'll need Firebase project credentials configured in `src/firebase.js` (or via environment variables) for Auth, Firestore, and Storage to work.
+You'll need Firebase project credentials configured — see [Environment variables](#environment-variables) below.
 
 ## Usage
 
@@ -29,6 +29,22 @@ npm start
 ```
 
 Then open [http://localhost:3000](http://localhost:3000). `/` is the home feed (requires login), `/map` shows nearby games/courts, `/login` and `/signup` handle auth.
+
+## Environment variables
+
+Copy `.env.example` to `.env` and fill in each value from your Firebase project's web app config:
+
+- `REACT_APP_FIREBASE_KEY` — Firebase Web API key
+- `REACT_APP_FIREBASE_DOMAIN` — Firebase Auth domain (e.g. `your-project.firebaseapp.com`)
+- `REACT_APP_FIREBASE_PROJECT_ID` — Firebase project ID
+- `REACT_APP_FIREBASE_STORAGE_BUCKET` — Firebase Storage bucket (e.g. `your-project.appspot.com`)
+- `REACT_APP_FIREBASE_SENDER_ID` — Firebase Cloud Messaging sender ID
+- `REACT_APP_MESSAGING_APP_ID` — Firebase app ID
+- `REACT_APP_MEASSUREMENT_ID` — Firebase Analytics measurement ID (note: this is the actual variable name used in code, misspelling included)
+
+Note: the Google Maps API key used by the `/map` page (`src/Pages/Map.js`) is currently hardcoded in source rather than read from an environment variable — it isn't included above since it's not a `.env`-driven setting, but should probably be moved to one before this app is deployed anywhere public.
+
+Without valid Firebase values, the app still builds and starts, but auth/data features (sign-in, map data) won't work.
 
 ## Built with
 
